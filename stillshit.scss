@@ -1,0 +1,51 @@
+@use 'sass:color';
+
+// override theme
+$primary: #cced03; // green
+$secondary: #292C24; // dark gray
+$warning: #E6893D; // orange
+$info: #3AF2FF; // bleu
+$text-color: #D3D3D3; // light gray
+
+
+$indice-border-color: #717271;
+
+@import "./node_modules/bootstrap/scss/bootstrap";
+
+// html tags
+button {
+	&:hover {
+		background-color: color.scale($primary, $lightness: -30%);
+	}
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+li { 
+	list-style-image: url(zaap.png); 
+}
+
+
+// class
+
+.center {
+	text-align: center;
+}
+
+.content {
+	color: $text-color;
+	padding: 1em;
+	font-weight: 700;
+}
+
+.separator {
+	border-top: 6px dashed $info;
+	border-radius: 5px;
+	max-width: 50%;
+	background-color: color.scale($info, $lightness: -30%);;
+}
+
+

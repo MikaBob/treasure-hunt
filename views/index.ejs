@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<!--
+	*
+	*
+	*				Si vous lisez ceci, c'est que vous êtes curieux voire admirateur.
+	*
+	*				Ou bien vous essayez de tricher, auquel cas, vous aurez
+	*				sincèrement plus vite fait de faire la chasse au trésor, ça vous
+	*				prendra bien moins de temps...
+	*
+	*				En attendant, GL&HF =D
+	*				
+	-->
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		
+		<link href="public_html/stillshit.css"  rel="stylesheet"/>
+		
+		<script src="node_modules/jquery/dist/jquery.min.js"></script>
+		<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+	</head>
+	
+	<body class="bg-secondary">
+		<div class="content container">
+			<div class="row">
+				<div class="col-12 title center mb-3">
+					<img src="public_html/logo.png"></img><h1>La chasse au trésor des Peaky-blinders</h1>
+				</div>
+				<div class="presentation col-12 mb-3">
+					<div class="row p-2">
+						<p>Bienvenue sur le site web de la chasse au trésor de l'alliance Peaky-Blinders du <u>29/01/2021</u> !
+						<br/>Vous pouvez faire de la recherche en ligne pour vous faciliter la tâche, n'hésitez pas à prendre des notes et il est préférable d'être au moins niveau 80 pour éviter les agressions
+						<br/>
+						<br/>
+						<u>Zaap à connaître</u>:
+						<ul>
+							<li>Centre-Ville - Brâkmar<b class="text-info">[-26,35]</b></li>
+							<li>Port de Madrestam - Amakna<b class="text-info">[7,-4]</b></li>
+							<li>Plaines rocheuses - Plaines de Cania <b class="text-info">[-17,-47]</b></li>
+							<li>Sufokia - Baie de Sufokia <b class="text-info">[13,26]</b></li>
+						</ul>
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-12 indices">
+					<div class="row">
+						<button id="start" type="button" onclick="start()" class="btn btn-primary btn-lg w-100">C'est parti !</button>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-12 answerField" style="display: none;">
+					<form class="row">
+						<div class="input-group input-group-lg mb-1">
+							<input id="answer" type="text" disabled="disabled" autocomplete="off" class="form-control col-10" placeholder="Tapez ici votre réponse..." aria-describedby="button-answer"/>
+							<button class="btn btn-primary col-2" style="border-top-left-radius: 0; border-bottom-left-radius: 0;" type="submit" id="button-answer">
+								<span class="loading-spiner spinner-border spinner-border-sm"></span>
+								Envoyer!
+							</button>
+						</div>
+						<input id="progression" value="32LD7REEPT" type="hidden" />
+					</form>
+					<div class="row">
+						<div class="col-12 wrongAnswer-container alert alert-danger"  style="display: none;" role="alert">
+							<span type="button" class="alert-close close" aria-label="Close"><span aria-hidden="true">&times;</span></span>
+							<div class="wrongAnswer"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="public_html/frontend.js"></script>
+	</body>
+</html>
