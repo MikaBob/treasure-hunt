@@ -1,4 +1,6 @@
-npm install nodemon -gnpm install sass -g
-npm install
-sass stillshit.scss public_html/stillshit.css
-nodemon server.js --config nodemon.json
+#!/bin/sh
+#sudo npm install nodemon -g
+#sudo npm install sass -g
+#sudo npm install
+#sudo sass stillshit.scss public_html/stillshit.css
+sudo nodemon server.js --config nodemon.json
