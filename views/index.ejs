@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 	<!--
 	*
 	*
@@ -14,6 +14,8 @@
 	-->
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Chasse au trésor Peaky-blinders</title>
 		
 		<link href="public_html/stillshit.css"  rel="stylesheet"/>
 		
@@ -22,10 +24,10 @@
 	</head>
 	
 	<body class="bg-secondary">
-		<div class="content container">
+		<div class="content container-lg px-3 px-lg-0">
 			<div class="row">
 				<div class="col-12 title center mb-3">
-					<img src="public_html/logo.png"></img><h1>La chasse au trésor des Peaky-blinders</h1>
+					<img src="public_html/logo.png" alt="logo-peaky-blinders"></img><h1>La chasse au trésor des Peaky-blinders</h1>
 				</div>
 				<div class="presentation col-12 mb-3">
 					<div class="row p-2">
@@ -34,11 +36,11 @@
 						<br/>
 						<br/>
 						<u>Zaap à connaître</u>:
-						<ul>
-							<li>Centre-Ville - Brâkmar<b class="text-info">[-26,35]</b></li>
-							<li>Port de Madrestam - Amakna<b class="text-info">[7,-4]</b></li>
-							<li>Plaines rocheuses - Plaines de Cania <b class="text-info">[-17,-47]</b></li>
-							<li>Sufokia - Baie de Sufokia <b class="text-info">[13,26]</b></li>
+						<ul class="zaap">
+							<li><img src="public_html/zaap.png"/> Centre-Ville - Brâkmar <b class="text-info">[-26,35]</b></li>
+							<li><img src="public_html/zaap.png"/> Port de Madrestam - Amakna <b class="text-info">[7,-4]</b></li>
+							<li><img src="public_html/zaap.png"/> Routes Rocailleuses - Plaines de Cania <b class="text-info">[-20,-20]</b></li>
+							<li><img src="public_html/zaap.png"/> Sufokia - Baie de Sufokia <b class="text-info">[13,26]</b></li>
 						</ul>
 						</p>
 					</div>
@@ -55,8 +57,8 @@
 				<div class="col-12 answerField" style="display: none;">
 					<form class="row">
 						<div class="input-group input-group-lg mb-1">
-							<input id="answer" type="text" disabled="disabled" autocomplete="off" class="form-control col-10" placeholder="Tapez ici votre réponse..." aria-describedby="button-answer"/>
-							<button class="btn btn-primary col-2" style="border-top-left-radius: 0; border-bottom-left-radius: 0;" type="submit" id="button-answer">
+							<input id="answer" type="text" disabled="disabled" autocomplete="off" class="form-control col-9" placeholder="Tapez ici votre réponse..." aria-describedby="button-answer"/>
+							<button class="btn btn-primary col-3" style="border-top-left-radius: 0; border-bottom-left-radius: 0;" type="submit" id="button-answer">
 								<span class="loading-spiner spinner-border spinner-border-sm"></span>
 								Envoyer!
 							</button>
@@ -65,7 +67,7 @@
 					</form>
 					<div class="row">
 						<div class="col-12 wrongAnswer-container alert alert-danger"  style="display: none;" role="alert">
-							<span type="button" class="alert-close close" aria-label="Close"><span aria-hidden="true">&times;</span></span>
+							<span class="alert-close close" aria-label="Close"><span aria-hidden="true">&times;</span></span>
 							<div class="wrongAnswer"></div>
 						</div>
 					</div>

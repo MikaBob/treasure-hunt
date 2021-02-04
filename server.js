@@ -9,15 +9,17 @@ const fs	= require('fs');
 let app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// View engine setup 
-app.set('view engine', 'ejs'); 
+// View engine setup
+app.set('view engine', 'ejs');
 
-app.get('*', (req, res, next) => { 
+/*
+app.get('*', (req, res, next) => {
 	console.log(req.url);
 	next();
 });
+*/
 
-app.get('/', (req, res) => { 
+app.get('/', (req, res) => {
     // Rendering ./views/index.ejs
     res.render('index');
 });
@@ -39,7 +41,7 @@ app.get('/favicon.ico', (req, res, next) => {
 
 app.post('/getNextStep', (req, res) => {
 	const { answer, currentKey } = req.body;
-	
+
 	sanitizedAnswer = answer
 		.replace(/é|è|ë|ê/ig,'e')
 		.replace(/ã|à|ä|@/ig,'a')
@@ -49,26 +51,26 @@ app.post('/getNextStep', (req, res) => {
 		.replace(/ÿ/ig,'y')
 		.replace(/\W/ig, '')
 		.toUpperCase();
-	
-	
+
+
 	res.setHeader('Content-Type', 'application/json');
-	
+
 	if(sanitizedAnswer !== '') {
 		// Read database
 		fs.readFile(CLUES_FILE, (error, data) => {
 			if (error) throw error;
-			let clues = JSON.parse(data), 
+			let clues = JSON.parse(data),
 			isCurrentKeyFound = false, // if the key can not be found, then reset the game
-			alreadyFoundClue = false; // skip search if answer match a clue 
-			
+			alreadyFoundClue = false; // skip search if answer match a clue
+
 			clues.forEach((clue) => {
 				if(alreadyFoundClue) return;
-				
+
 				const { acceptableAnswers, key, previousKey, html } = clue;
-				
+
 				// if the clue follow the chronology
 				if(currentKey === previousKey) {
-						
+
 					// if the anwser match at least one acceptable answer
 					if(sanitizedAnswer.search(acceptableAnswers) > -1){
 						if(!alreadyFoundClue) {
@@ -77,10 +79,10 @@ app.post('/getNextStep', (req, res) => {
 						}
 					}
 				}
-				
-				if(currentKey === key) isCurrentKeyFound = true;				
+
+				if(currentKey === key) isCurrentKeyFound = true;
 			});
-			
+
 			if(!isCurrentKeyFound) {
 				res.end(JSON.stringify({ err: 'reset', msg: '<p class="text-danger">Cette étape n\'est pas dans notre base de données. Vous devez tout reprendre depuis le début...</p>', key: '32LD7REEPT'}));
 			} else {
@@ -98,7 +100,7 @@ function sendFileIfFileExist(path, res){
 	}
 }
 
-app.listen(8000, (err) => { 
-    if (err) console.log(err); 
-    console.log('Server listening...'); 
+app.listen(8000, (err) => {
+    if (err) console.log(err);
+    console.log('Server listening...');
 });

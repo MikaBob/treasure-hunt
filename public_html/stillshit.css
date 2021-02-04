@@ -9937,8 +9937,12 @@ img {
   height: auto;
 }
 
-li {
-  list-style-image: url(zaap.png);
+ul {
+  width: 100%;
+  list-style: none;
+}
+ul li img {
+  max-width: calc(1% + 1vw + 1vh) !important;
 }
 
 .center {
@@ -9949,6 +9953,7 @@ li {
   color: #D3D3D3;
   padding: 1em;
   font-weight: 700;
+  font-size: calc(1% + 1vw + 1vh);
 }
 
 .separator {
@@ -9956,6 +9961,12 @@ li {
   border-radius: 5px;
   max-width: 50%;
   background-color: #00cddb;
+}
+
+@media (min-width: 768px) {
+  .content {
+    font-size: 16px;
+  }
 }
 
 /*# sourceMappingURL=stillshit.css.map */

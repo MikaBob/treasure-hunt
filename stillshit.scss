@@ -24,13 +24,16 @@ img {
 	height: auto;
 }
 
-li { 
-	list-style-image: url(zaap.png); 
+ul {
+	width: 100%;
+	list-style: none;
+
+	li img {
+		max-width: calc(1% + 1vw + 1vh) !important;
+	}
 }
 
-
-// class
-
+//class
 .center {
 	text-align: center;
 }
@@ -39,6 +42,7 @@ li {
 	color: $text-color;
 	padding: 1em;
 	font-weight: 700;
+	font-size: calc(1% + 1vw + 1vh);
 }
 
 .separator {
@@ -48,4 +52,9 @@ li {
 	background-color: color.scale($info, $lightness: -30%);;
 }
 
-
+// media queries
+@media (min-width: 768px) {
+	.content {
+		font-size: 16px;
+	}
+}

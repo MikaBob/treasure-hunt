@@ -3,13 +3,13 @@
 		"acceptableAnswers": "32LD7REEPT",
 		"key": "32LD7REEPT",
 		"previousKey": "32LD7REEPT",
-		"html": "<p>Vous voilà lancé dans une aventure de type grandiose ! Tout commence au Port de madrestam, où vous errerez sans but...<br/> Dans votre languissement incessant, vous commencez à <b class=\"text-warning\">compter le nombre d'étoile de mer bleu en </b><b class=\"text-info\">[8,-2]</b>.</p>"
+		"html": "<p>Vous voilà lancé dans une aventure de type grandiose ! Tout commence au Port de madrestam, où vous errerez sans but...<br/>Dans votre languissement incessant, vous commencez à <b class=\"text-warning\">compter le nombre d'étoile de mer bleu en </b><b class=\"text-info\">[8,-2]</b>.</p>"
 	},
 	{
 		"acceptableAnswers": "^4$|^QUATRES?$",
 		"key": "C0FIKUVQPG",
 		"previousKey": "32LD7REEPT",
-		"html": "<p>Excellent! Vous voilà réjouis de savoir qu'il y a effectivement 4 étoiles de mer bleue. Celà vous vient à l'esprit comme une vague d'amour pour d'étoiles bleues <3<br/><br/>Là ce trouve un enfant, qui mentionne une personne. Il vous faudra le (ou la) trouver ! Laissez vous guider par les étoiles et longez la rivière ;)<br/><br/>Finissez de parler avec lui. <b class=\"text-warning\">Quel est le 2ème ingrédient du nutelli ?</b></p>"
+		"html": "<p>Excellent! Vous voilà réjouis de savoir qu'il y a effectivement 4 étoiles de mer bleue. Celà vous vient à l'esprit comme une vague d'amour pour les étoiles bleues <3<br/><br/>Là ce trouve un enfant, qui mentionne une personne. Il vous faudra le (ou la) trouver ! Laissez vous guider par les étoiles et longez la rivière ;)<br/><br/>Finissez de parler avec lui. <b class=\"text-warning\">Quel est le 2ème ingrédient du nutelli ?</b></p>"
 	},
 	{
 		"acceptableAnswers": "(BEAUCOUP|BCP)?(D|DE)?AMOUR|LOVE?",
@@ -18,22 +18,22 @@
 		"html": "<div class=\"col-12\"><p>Après son monologue, Karim vous fait part d'une inquiétude... <br/>Son ami Lichen est décédé mais il ne sait pas comment. Il vous faut enquêter ! <br/>Allez donc au cimetière de la ville et lisez l'épitaphe de Lichen.<b class=\"text-warning\"> Comment est-il décédé ?</b></p></div>"
 	},
 	{
-		"acceptableAnswers": "PIZZA(AU)?BOUDIN",
+		"acceptableAnswers": "INDIGESTION|PIZZA(AU)?BOUDIN",
 		"key": "O9V1Z840LD",
 		"previousKey": "KM8ESX582V",
-		"html": "<p>Cette mésaventure de pizza au boudin vous évoque quelque chose... Vous commencez doucement à vous rappelez. Une fameuse exploitation de boudin de lapin était impliqué mais vous cela vous reste sur le bout de la langue. Cherchez à la milice de Brakmar, quelqu'un succeptible de s'y connaître en boudin de lapin et <b class=\"text-warning\">donnez le plat dont les lapins sont friand</b></p>"
+		"html": "<p>Cette mésaventure de pizza au boudin vous évoque quelque chose... Vous commencez doucement à vous rappelez. Une fameuse exploitation de boudin de lapin était impliquée mais cela vous reste sur le bout de la langue. Cherchez à la milice de Brakmar, quelqu'un succeptible de s'y connaître en boudin de lapin et <b class=\"text-warning\">donnez le plat dont les lapins sont friand.</b></p>"
 	},
 	{
-		"acceptableAnswers": "PUREE?(DE)?CAWOTE?",
+		"acceptableAnswers": "PUREE?(DE)?CA(W|R)OTE?",
 		"key": "ZIBNQ8N4TY",
 		"previousKey": "O9V1Z840LD",
-		"html": "<p>La belle cuisinière vous guide alors sur votre enquête:<br/>L'exploitation de boudin de lapin ? Mais bien sûr que je m'en souviens ! C'était en Maisial 602 dans les plaines de cania. Si, vous commencez depuis le zaap de la route rocailleuse:</p><ul><li>Prenez plein sud jusqu'au Corbac</li><li>Puis droite et bas pour arriver sur une intersection</li><li>Et enfin à partir de là, suivez simplement les lapins blancs</li></ul><p><br/>Mais méfiez-vous ! Il y a des mecs pas net là-bas<br/><b class=\"text-warning\">Quel est le nom du mec louche ?</b></p>"
+		"html": "<p>La belle cuisinière vous guide alors sur votre enquête:<br/>L'exploitation de boudin de lapin ? Mais bien sûr que je m'en souviens ! C'était en Maisial 602 dans les plaines de cania. Commencez depuis le zaap de la route rocailleuse:</p><ul><li><img src=\"public_html/flag_treasure.png\"/>Prenez plein sud jusqu'au Corbac</li><li><img src=\"public_html/flag_treasure.png\"/>Puis droite et bas pour arriver sur une intersection</li><li><img src=\"public_html/flag_treasure.png\"/>Descendez, et vous arrivez dans un virage</li><li><img src=\"public_html/flag_treasure.png\"/>Bon, euh... depuis le virage c'est tout à gauche jusqu'à un étang avec un merisier. Vous ne pouvez pas vous trompez, il n'y a rien d'autre, pas même une ortie</li><li><img src=\"public_html/flag_treasure.png\"/>Ça tombe bien, en parlant de merisier, vous remontez un coup pour rejoindre le pied la montagne, et là BAM! Un orme magnifique. N'hésitez pas à faire reposer votre monture.</li><li><img src=\"public_html/flag_treasure.png\"/>Et à partir de là, vous allez direction soleil couchant jusqu'à la plage. Profitez bien du couché de soleil, hein !</li><li><img src=\"public_html/flag_treasure.png\"/>Après, il ne vous reste plus qu'à suivre les lapins.</li></ul><p>Mais méfiez-vous ! Il y a des mecs pas net là-bas. <b class=\"text-warning\">Quel est le nom du mec louche ?</b></p>"
 	},
 	{
 		"acceptableAnswers": "SIM(LE)?SOFT",
 		"key": "NQV18EQP7R",
 		"previousKey": "ZIBNQ8N4TY",
-		"html": "<p>Prennez note car ce nombre vous semble important... Allez voir le personnage évoqué dans le dialogue. Cherchez sur internet sur son nom ne reviens pas.<b class=\"text-warning\">Qui est le dernier navigateur mentionné ?</b></p>"
+		"html": "<u>Notez ce nombre, car il vous semble important...</u><p>Allez voir le personnage évoqué dans le dialogue. Cherchez sur internet si son nom ne vous reviens pas. <b class=\"text-warning\">Qui est le dernier navigateur mentionné ?</b></p>"
 	},
 	{
 		"acceptableAnswers": "NIKOSMONOTE?",
