@@ -53,9 +53,30 @@ ul {
 	background-color: color.scale($info, $lightness: -30%);;
 }
 
+.speech {
+	position: absolute;
+	bottom: 0;
+	background-image: url('img/background_speech.png');
+}
+
+.title-speech {
+	color: #615d56;
+	display: block;
+	width: 100%;
+	background-image: url('img/background_title_speech.png');
+}
+
+
 // media queries
 @media (min-width: 768px) {
 	.content {
 		font-size: 16px;
+	}
+}
+
+@media (max-width: 900px) {
+	.speech {
+		position: static;
+		bottom: auto;
 	}
 }

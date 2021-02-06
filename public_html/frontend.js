@@ -1,5 +1,10 @@
 const FADE_TIME = 600;
-
+start();
+setTimeout(()=>{nextStep('a');}, 1000);
+setTimeout(()=>{nextStep('a');}, 1800);
+setTimeout(()=>{nextStep('a');}, 2400);
+setTimeout(()=>{nextStep('a');}, 3200);
+setTimeout(()=>{nextStep('a');}, 4000);
 function start() {
 	$('#start').hide({duration: 400, done: (()=>{
 		$('#start').parent().remove();
