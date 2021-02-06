@@ -1,6 +1,7 @@
 const PUBLIC_HTML = '/public_html/';
 const NODE_MODULES = '/node_modules/';
-const CLUES_FILE = './clues.json';
+const CLUES_DATABASE = './clues.json';
+const CLUES_HTML = './views/clues_html';
 
 const bodyParser = require('body-parser');
 const express = require('express');
@@ -56,26 +57,32 @@ app.post('/getNextStep', (req, res) => {
 	res.setHeader('Content-Type', 'application/json');
 
 	if(sanitizedAnswer !== '') {
-		// Read database
-		fs.readFile(CLUES_FILE, (error, data) => {
-			if (error) throw error;
+		// Read clue database
+		fs.readFile(CLUES_DATABASE, (error, data) => {
+			if (error) console.error('Clues database not found !');
 			let clues = JSON.parse(data),
 			isCurrentKeyFound = false, // if the key can not be found, then reset the game
-			alreadyFoundClue = false; // skip search if answer match a clue
+			alreadyFoundClue = false; // skip search if the answer matches
 
 			clues.forEach((clue) => {
 				if(alreadyFoundClue) return;
 
-				const { acceptableAnswers, key, previousKey, html } = clue;
+				const { acceptableAnswers, key, previousKey } = clue;
 
 				// if the clue follow the chronology
 				if(currentKey === previousKey) {
 
-					// if the anwser match at least one acceptable answer
+					// if the anwser matches at least one acceptable answer
 					if(sanitizedAnswer.search(acceptableAnswers) > -1){
 						if(!alreadyFoundClue) {
 							alreadyFoundClue = true;
-							res.end(JSON.stringify({ err: 'ok', msg: html, key: key}));
+							const cluehtmlPath = CLUES_HTML + '/'+ key +'.html';
+							try {
+								const clueHtml = fs.readFileSync(cluehtmlPath, {encoding:'utf8', flag:'r'});
+								res.end(JSON.stringify({ err: 'ok', msg: clueHtml, key: key}));
+							} catch (err) {
+								if (err) console.error('Clue html not found ('+cluehtmlPath+')');
+							}
 						}
 					}
 				}

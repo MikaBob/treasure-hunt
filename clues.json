@@ -2,43 +2,36 @@
 	{
 		"acceptableAnswers": "32LD7REEPT",
 		"key": "32LD7REEPT",
-		"previousKey": "32LD7REEPT",
-		"html": "<p>Vous voilà lancé dans une aventure de type grandiose ! Tout commence au Port de madrestam, où vous errerez sans but...<br/> Dans votre languissement incessant, vous commencez à <b class=\"text-warning\">compter le nombre d'étoile de mer bleues en </b><b class=\"text-info\">[8,-2]</b>.</p>"
+		"previousKey": "32LD7REEPT"
 	},
 	{
 		"acceptableAnswers": "^4$|^QUATRES?$",
 		"key": "C0FIKUVQPG",
-		"previousKey": "32LD7REEPT",
-		"html": "<p>Excellent! Vous voilà réjoui(e) de savoir qu'il y a effectivement 4 étoiles de mer bleues dans ce quartier du port. Vous vous demandez comment elles se sont décrochées du Krosmos pour atterrir ici.<br/><br/>Votre béatitude attire l'attention d'un enfant qui jouait tout près de vous. Trouvez la personne mentionnée par l'enfant. Laissez vous guider par les étoiles et longez la rivière ;)<br/><br/>Engagez la conversation avec cette personne. <b class=\"text-warning\">Quel est le 2ème ingrédient de sa préparation ?</b></p>"
+		"previousKey": "32LD7REEPT"
 	},
 	{
 		"acceptableAnswers": "AMOUR|LOVE",
 		"key": "KM8ESX582V",
-		"previousKey": "C0FIKUVQPG",
-		"html": "<p>Après son monologue, Karim vous fait part d'une inquiétude... <br/>Son ami Lichen est décédé mais il ne sait pas comment. Il vous faut enquêter ! <br/>Allez donc au cimetière de la ville et lisez l'épitaphe sur la tombe de Lichen.<b class=\"text-warning\"> Comment est-il décédé ?</b></p>"
+		"previousKey": "C0FIKUVQPG"
 	},
 	{
 		"acceptableAnswers": "PIZZA(AU)?BOUDIN|INDIGESTION",
 		"key": "O9V1Z840LD",
-		"previousKey": "KM8ESX582V",
-		"html": "<p>Une indigestion de pizza au boudin ?! C'est étrange, les journaux de la semaine dernière parlaient justement de problèmes sanitaires en rapport avec le boudin de lapin. Brâkmar est réputée pour son excellent boudin de lapin. Cherchez à la milice de Brakmar une personne succeptible de s'y connaître en boudin de lapin. <b class=\"text-warning\">Donnez le nom du plat dont elle parle et dont les lapins sont très friands.</b></p>"
+		"previousKey": "KM8ESX582V"
 	},
 	{
 		"acceptableAnswers": "PUREE?(DE)?CAWOTT?ES?",
 		"key": "ZIBNQ8N4TY",
-		"previousKey": "O9V1Z840LD",
-		"html": "<p>La cuisinière vous guide : L'exploitation de boudin de lapin ? Mais bien sûr que je la connais ! Cependant, depuis quelques jours, plus moyen de se procurer du boudin. La ferme était pourtant prospère et on dit partout que le patron est riche comme Nidas ! Si vous voulez mon avis, il y a anguille sous roche. Voilà comment vous rendre sur place :</p><ul><li><img src=\"public_html/flag_treasure.png\"/>Commencez depuis le zaap de la route rocailleuse:</li><li><img src=\"public_html/flag_treasure.png\"/>Prenez plein sud jusqu'au Corbac</li><li><img src=\"public_html/flag_treasure.png\"/>Puis droite et bas pour arriver sur une intersection</li><li><img src=\"public_html/flag_treasure.png\"/>Descendez, et vous arrivez dans un virage</li><li><img src=\"public_html/flag_treasure.png\"/>Bon, euh... depuis le virage c'est tout à gauche jusqu'à un étang avec un merisier. Vous ne pouvez pas vous trompez, il n'y a rien d'autre, pas même une ortie</li><li><img src=\"public_html/flag_treasure.png\"/>Ça tombe bien, en parlant de merisier, vous remontez un coup pour rejoindre le pied la montagne, et là BAM! Un orme magnifique. N'hésitez pas à faire reposer votre monture.</li><li><img src=\"public_html/flag_treasure.png\"/>Et à partir de là, vous allez direction soleil couchant jusqu'à la plage. Profitez bien du couché de soleil, hein !</li></ul><br/>Depuis la plage, vous all... nom d'un Bouftou ! Ma fricassée de Moskitos est en train d'attacher ! Fichez le camp de ma cuisine. Vous allez trouver, ce n'est plus très loin et il y a des lapins blancs partout. Parlez au type louche en bleu. <b class=\"text-warning\">Quel est son nom ?</b></p>"
+		"previousKey": "O9V1Z840LD"
 	},
 	{
 		"acceptableAnswers": "SIM|SOFT",
 		"key": "NQV18EQP7R",
-		"previousKey": "ZIBNQ8N4TY",
-		"html": "<p>Vous faites la connaissance de Sim le Soft. Il vous rabat les oreilles pendant une heure avec ses histoires de Kanigrous, dont vous n'avez que faire. Vous êtes cependant impressionné(e) par <u>le nombre de Kanigrous qu'il a tués</u>.</p><p>L'exploitation de boudin de lapins a été fermée suite à une inspection sanitaire. De toute façon, ça allait faire faillite tôt ou tard, le patron était fauché. Il est maintenant sous les verrous et c'est bien comme ça.</p><p>Un détail retient votre attention. Sbab racontait que le patron était riche alors que Sim le Soft prétend le contraire. L'un des deux se trompe ... ou ment ? Pour en avoir le coeur net, interrogez directement le patron, qui est détenu dans les geoles de Brâkmar. <b class=\"text-warning\">Comment se nomme-t-il ?</b></p>"
+		"previousKey": "ZIBNQ8N4TY"
 	},
 	{
 		"acceptableAnswers": "LEPATRON",
 		"key": "QEM532GIWI",
-		"previousKey": "NQV18EQP7R",
-		"html": "<p>Vous parvenez enfin à faire taire cet affreux mythomane. Retrouvez ce navigateur, puis, comme pour son camarade, notez ce nombre important.<br/>Finissez le donjon Kardorim et <b class=\"text-warning\">Donnez le XXXXX</b></p>"
+		"previousKey": "NQV18EQP7R"
 	}
 ]
