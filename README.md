@@ -1,7 +1,8 @@
-npm install nodemon -g
-npm install sass -g
+**Install**
+`npm install nodemon -g`
+`npm install sass -g`
+`npm install`
 
-npm install
-
-sass stillshit.scss public_html/stillshit.css
-nodemon server.js
+**Compile and start**
+`sass stillshit.scss public_html/stillshit.css`
+`nodemon server.js`
