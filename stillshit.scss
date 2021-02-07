@@ -50,7 +50,8 @@ ul {
 	border-top: 6px dashed $info;
 	border-radius: 5px;
 	max-width: 50%;
-	background-color: color.scale($info, $lightness: -30%);;
+	background-color: color.scale($info, $lightness: -30%);
+	clear: both;
 }
 
 .speech {
