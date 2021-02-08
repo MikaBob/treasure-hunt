@@ -1,17 +1,17 @@
 const FADE_TIME = 600;
-start();
+/*start();
 setTimeout(()=>{nextStep('a');}, 1000);
 setTimeout(()=>{nextStep('a');}, 1800);
 setTimeout(()=>{nextStep('a');}, 2400);
 setTimeout(()=>{nextStep('a');}, 3200);
-setTimeout(()=>{nextStep('a');}, 4000);
+setTimeout(()=>{nextStep('a');}, 4000);*/
 function start() {
 	$('#start').hide({duration: 400, done: (()=>{
 		$('#start').parent().remove();
 		$('#answer').removeAttr('disabled');
 		$('#button-answer').removeAttr('disabled');
 		stopLoading();
-		nextStep('32LD7REEPT');
+		nextStep('A32LD7REEPT');
 		$('.answerField').hide().fadeIn(FADE_TIME*2, () => {$('#answer').focus();});
 	})});
 };
@@ -57,7 +57,7 @@ function handleAnswer(error, htmlToPrint, newKey, answer) {
 		window.scrollBy(0, 300);
 	} else if(error === 'reset'){
 		$('.indices').append('<hr class="separator"/><div class="row indice p-2 mb-3">'+htmlToPrint+'</div>');
-		nextStep('32LD7REEPT');
+		nextStep('A32LD7REEPT');
 	} else {
 		
 		$('.wrongAnswer').html(htmlToPrint);

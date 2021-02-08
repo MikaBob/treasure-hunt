@@ -91,7 +91,7 @@ app.post('/getNextStep', (req, res) => {
 			});
 
 			if(!isCurrentKeyFound) {
-				res.end(JSON.stringify({ err: 'reset', msg: '<p class="text-danger">Cette étape n\'est pas dans notre base de données. Vous devez tout reprendre depuis le début...</p>', key: '32LD7REEPT'}));
+				res.end(JSON.stringify({ err: 'reset', msg: '<p class="text-danger">Cette étape n\'est pas dans notre base de données. Vous devez tout reprendre depuis le début...</p>', key: 'A32LD7REEPT'}));
 			} else {
 				res.end(JSON.stringify({ err: 'wrong', msg: 'Non ce n\'est pas ça :/', key: currentKey}));
 			}

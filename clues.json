@@ -1,37 +1,67 @@
 [
 	{
-		"acceptableAnswers": "32LD7REEPT",
-		"key": "32LD7REEPT",
-		"previousKey": "32LD7REEPT"
+		"acceptableAnswers": "A32LD7REEPT",
+		"key": "A32LD7REEPT",
+		"previousKey": "A32LD7REEPT"
 	},
 	{
 		"acceptableAnswers": "^4$|^QUATRES?$",
-		"key": "C0FIKUVQPG",
-		"previousKey": "32LD7REEPT"
+		"key": "BC0FIKUVQPG",
+		"previousKey": "A32LD7REEPT"
 	},
 	{
 		"acceptableAnswers": "AMOUR|LOVE",
-		"key": "KM8ESX582V",
-		"previousKey": "C0FIKUVQPG"
+		"key": "CKM8ESX582V",
+		"previousKey": "BC0FIKUVQPG"
 	},
 	{
 		"acceptableAnswers": "PIZZA(AU)?BOUDIN|INDIGESTION",
-		"key": "O9V1Z840LD",
-		"previousKey": "KM8ESX582V"
+		"key": "DO9V1Z840LD",
+		"previousKey": "CKM8ESX582V"
 	},
 	{
 		"acceptableAnswers": "PUREE?(DE)?CAWOTT?ES?",
-		"key": "ZIBNQ8N4TY",
-		"previousKey": "O9V1Z840LD"
+		"key": "EZIBNQ8N4TY",
+		"previousKey": "DO9V1Z840LD"
 	},
 	{
-		"acceptableAnswers": "SIM|SOFT",
-		"key": "NQV18EQP7R",
-		"previousKey": "ZIBNQ8N4TY"
+		"acceptableAnswers": "BWAK(DE)?(TERRE)?",
+		"key": "FNQV18EQP7R",
+		"previousKey": "EZIBNQ8N4TY"
 	},
 	{
 		"acceptableAnswers": "LEPATRON",
-		"key": "QEM532GIWI",
-		"previousKey": "NQV18EQP7R"
+		"key": "GQEM532GIWI",
+		"previousKey": "FNQV18EQP7R"
+	},
+	{
+		"acceptableAnswers": "BRIGANDS?",
+		"key": "HVGW0F65W6T",
+		"previousKey": "GQEM532GIWI"
+	},
+	{
+		"acceptableAnswers": "TRANSPORTEURBRIGANDIN",
+		"key": "IALHXI1MWK4",
+		"previousKey": "HVGW0F65W6T"
+	},
+	{
+		"acceptableAnswers": "MADRESTAM",
+		"key": "JTZ53ME7ODA",
+		"previousKey": "IALHXI1MWK4"
+	},
+	{
+		"acceptableAnswers": "RIEN(DU)?(TOUT)?",
+		"key": "KLOV51CC84J",
+		"previousKey": "JTZ53ME7ODA"
+	},
+	{
+		"acceptableAnswers": "MAX",
+		"key": "LRBTRQIUY11",
+		"previousKey": "KLOV51CC84J"
+	},
+	{
+		"acceptableAnswers": "SIM|SOFT",
+		"key": "MMRL6JV1NM6",
+		"previousKey": "LRBTRQIUY11"
 	}
 ]
