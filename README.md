@@ -10,4 +10,6 @@
 
 `sass stillshit.scss public_html/stillshit.css`
 
-`nodemon server.js`
+`iptables -A PREROUTING -t nat -i eth0 -p tcp --dport 80 -j REDIRECT --to-port 8000`
+
+`nodemon server.js --config nodemon.json`
