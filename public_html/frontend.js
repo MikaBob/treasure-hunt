@@ -1,10 +1,5 @@
 const FADE_TIME = 600;
-/*start();
-setTimeout(()=>{nextStep('a');}, 1000);
-setTimeout(()=>{nextStep('a');}, 1800);
-setTimeout(()=>{nextStep('a');}, 2400);
-setTimeout(()=>{nextStep('a');}, 3200);
-setTimeout(()=>{nextStep('a');}, 4000);*/
+
 function start() {
 	$('#start').hide({duration: 400, done: (()=>{
 		$('#start').parent().remove();
@@ -59,9 +54,9 @@ function handleAnswer(error, htmlToPrint, newKey, answer) {
 		$('.indices').append('<hr class="separator"/><div class="row indice p-2 mb-3">'+htmlToPrint+'</div>');
 		nextStep('A32LD7REEPT');
 	} else {
-		
 		$('.wrongAnswer').html(htmlToPrint);
 		$('.wrongAnswer-container').fadeIn(FADE_TIME/2);
+		window.scrollBy(0, 300);
 		setTimeout(()=>{$('.wrongAnswer-container').fadeOut(FADE_TIME);}, 4000);
 	}
 }

@@ -4,15 +4,17 @@
 $primary: #cced03; // green
 $secondary: #292C24; // dark gray
 $warning: #E6893D; // orange
-$info: #3AF2FF; // bleu
+$info: #3AF2FF; // blue
 $text-color: #D3D3D3; // light gray
 
-
-$indice-border-color: #717271;
 
 @import "./node_modules/bootstrap/scss/bootstrap";
 
 // html tags
+body {
+	background-color: rgba($secondary, 0.85);
+}
+
 button {
 	&:hover {
 		background-color: color.scale($primary, $lightness: -30%);
@@ -31,6 +33,7 @@ ul {
 	li img {
 		max-width: calc(1% + 1vw + 1vh) !important;
 		max-height: 35px;
+		margin-right: 0.5rem;
 	}
 }
 
@@ -44,6 +47,14 @@ ul {
 	padding: 1em;
 	font-weight: 700;
 	font-size: calc(1% + 1vw + 1vh);
+}
+
+.img-flip {
+	transform: scaleX(-1);
+}
+
+.npc-img {
+	max-height: 400px;
 }
 
 .separator {
@@ -66,7 +77,6 @@ ul {
 	width: 100%;
 	background-image: url('img/background_title_speech.png');
 }
-
 
 // media queries
 @media (min-width: 768px) {
