@@ -71,6 +71,18 @@ ul {
 	background-image: url('img/background_speech.png');
 }
 
+@keyframes spinning {
+	from { transform: rotateY(0deg) }
+    to { transform: rotateY(360deg) }
+}
+.loading-spiner {
+	animation-name: spinning;
+	animation-duration: 4s;
+	animation-iteration-count: infinite;
+	/* linear | ease | ease-in | ease-out | ease-in-out */
+	animation-timing-function: linear;
+}
+
 .title-speech {
 	color: #615d56;
 	display: block;

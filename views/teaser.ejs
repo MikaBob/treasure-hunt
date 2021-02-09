@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Chasse au trésor Peaky-Blinders</title>
+		
+		<link href="public_html/stillshit.css" rel="stylesheet"/>
+		
+		<script src="node_modules/jquery/dist/jquery.min.js"></script>
+		<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+	</head>
+	
+	<body>
+		<div class="content container-lg px-3 px-lg-0">
+			<div class="row">
+				<div class="col-12 title center mb-3">
+					<img src="public_html/img/logo.png" alt="logo-peaky-blinders"></img>
+					<h2>Bienvenue sur le site web de la chasse au trésor de l'alliance Peaky-Blinders.<br/>
+						<br/>
+						La chasse débute dans<br/>
+						<span id="release_timer"></span>
+					</h2>
+					<img class="loading-spiner" src="public_html/img/loading.png" />
+				</div>
+			</div>
+		</div>
+		
+		<script>
+			//https://www.w3schools.com/howto/howto_js_countdown.asp
+			
+			// Set the date we're counting down to
+			var countDownDate = new Date('<%= releaseDate %>').getTime();
+
+			// Update the count down every 1 second
+			var countdown = () => {
+
+				// Get today's date and time
+				let now = new Date().getTime();
+
+				// Find the distance between now and the count down date
+				let distance = countDownDate - now;
+
+				// Time calculations for days, hours, minutes and seconds
+				let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+				let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+				let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+				let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+				// Display the result in the element with id="demo"
+				document.getElementById('release_timer').innerHTML = days + 'J ' + hours + 'h '
+				+ minutes + "m " + seconds + "s ";
+
+				// If the count down is finished, write some text
+				if (distance < 0) {
+					clearInterval(x);
+					location.reload();
+				}
+			};
+			countdown();
+			setInterval(countdown, 1000);
+		</script>
+	</body>
+</html>

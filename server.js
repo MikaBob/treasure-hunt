@@ -1,3 +1,4 @@
+const RELEASE_DATE = new Date('2021-02-09T13:00:00Z');
 const PUBLIC_HTML = '/public_html/';
 const NODE_MODULES = '/node_modules/';
 const CLUES_DATABASE = './clues.json';
@@ -21,8 +22,14 @@ app.get('*', (req, res, next) => {
 */
 
 app.get('/', (req, res) => {
-    // Rendering ./views/index.ejs
-    res.render('index');
+	let rightNow = new Date();
+
+	// Rendering ./views/*.ejs
+	if(rightNow <= RELEASE_DATE) {
+		res.render('teaser', {releaseDate: RELEASE_DATE});
+	} else {
+		res.render('index');
+	}
 });
 
 app.get(PUBLIC_HTML+'*', (req, res, next) => {
