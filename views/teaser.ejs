@@ -33,7 +33,7 @@
 			var countDownDate = new Date('<%= releaseDate %>').getTime();
 
 			// Update the count down every 1 second
-			var countdown = () => {
+			var countdown = setInterval(() => {
 
 				// Get today's date and time
 				let now = new Date().getTime();
@@ -47,18 +47,17 @@
 				let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
 				let seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-				// Display the result in the element with id="demo"
-				document.getElementById('release_timer').innerHTML = days + 'J ' + hours + 'h '
-				+ minutes + "m " + seconds + "s ";
+				// Display the result in the element with id="release_timer"
+				if (distance >= 0) {
+					document.getElementById('release_timer').innerHTML = days + 'J ' + hours + 'h '+ minutes + "m " + seconds + "s ";
+				}
 
 				// If the count down is finished, write some text
-				if (distance < 0) {
-					clearInterval(x);
-					location.reload();
+				if (distance <= 1000) {
+					clearInterval(countdown);
+					setTimeout(()=>{location.reload()}, 1000);
 				}
-			};
-			countdown();
-			setInterval(countdown, 1000);
+			},1000);
 		</script>
 	</body>
 </html>

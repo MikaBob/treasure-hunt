@@ -1,4 +1,4 @@
-const RELEASE_DATE = new Date('2021-02-09T13:00:00Z');
+const RELEASE_DATE_STRING = '2021-02-09T13:48:40Z';
 const PUBLIC_HTML = '/public_html/';
 const NODE_MODULES = '/node_modules/';
 const CLUES_DATABASE = './clues.json';
@@ -27,10 +27,13 @@ app.get('*', (req, res, next) => {
 
 app.get('/', (req, res) => {
 	let rightNow = new Date();
+	let releaseDateTime = new Date(RELEASE_DATE_STRING);
 
 	// Rendering ./views/*.ejs
-	if(rightNow <= RELEASE_DATE) {
-		res.render('teaser', {releaseDate: RELEASE_DATE});
+	if(rightNow <= releaseDateTime) {
+		// delay of 6sec between frontend and backend
+		releaseDateTime.setSeconds(releaseDateTime.getSeconds()+6); 
+		res.render('teaser', {releaseDate: releaseDateTime});
 	} else {
 		res.render('index');
 	}
