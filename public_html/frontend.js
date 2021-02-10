@@ -1,8 +1,18 @@
 const FADE_TIME = 600;
 
+pseudo = "";
+
 function start() {
 	$('#start').hide({duration: 400, done: (()=>{
 		$('#start').parent().remove();
+		
+		// Getting player name
+		while(pseudo.length == 0){
+			pseudo = window.prompt("Entrez votre pseudo : ");
+		}
+		
+		refreshProgressInterval = setInterval(refreshProgress, 2000)
+		
 		$('#answer').removeAttr('disabled');
 		$('#button-answer').removeAttr('disabled');
 		stopLoading();
@@ -10,6 +20,21 @@ function start() {
 		$('.answerField').hide().fadeIn(FADE_TIME*2, () => {$('#answer').focus();});
 	})});
 };
+
+function handleProgressAnswer (error, message) {
+	
+}
+
+function refreshProgress () {
+	$.ajax({
+		method: 'POST',
+		url: '/getProgress',
+		data: {}
+	})
+	.done((response) => {
+		$('#progressView').html(response)
+	});
+}
 
 
 function nextStep(answer) {
@@ -25,7 +50,7 @@ function nextStep(answer) {
 	$.ajax({
 		method: 'POST',
 		url: '/getNextStep',
-		data: {answer: answer, currentKey: $('#progression').val()},
+		data: {answer: answer, currentKey: $('#progression').val(), pseudo: pseudo},
 		beforeSend: () => {
 			startLoading();
 			// remove alert

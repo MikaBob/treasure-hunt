@@ -11,6 +11,10 @@ const fs	= require('fs');
 let app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 
+const playersProgress = []
+
+const playersProgressHistory = []
+
 // View engine setup
 app.set('view engine', 'ejs');
 
@@ -47,8 +51,17 @@ app.get('/favicon.ico', (req, res, next) => {
 	fs.createReadStream('.'+PUBLIC_HTML+'logo.ico').pipe(res);
 });
 
+app.post('/getProgress', (req, res) => {
+	progressHtml = "<h3>Progrès des participants</h3><p>"
+	for (progress in playersProgress) {
+		progressHtml += "<span>" + progress + " : " + playersProgress[progress][0] + "/13</span><br/>"
+	}
+	progressHtml += "</p>"
+	res.end(progressHtml);
+});
+
 app.post('/getNextStep', (req, res) => {
-	const { answer, currentKey } = req.body;
+	const { answer, currentKey, pseudo } = req.body;
 
 	sanitizedAnswer = answer
 		.replace(/é|è|ë|ê/ig,'e')
@@ -74,7 +87,7 @@ app.post('/getNextStep', (req, res) => {
 			clues.forEach((clue) => {
 				if(alreadyFoundClue) return;
 
-				const { acceptableAnswers, key, previousKey } = clue;
+				const { index, acceptableAnswers, key, previousKey } = clue;
 
 				// if the clue follow the chronology
 				if(currentKey === previousKey) {
@@ -86,6 +99,7 @@ app.post('/getNextStep', (req, res) => {
 							const cluehtmlPath = CLUES_HTML + '/'+ key +'.html';
 							try {
 								const clueHtml = fs.readFileSync(cluehtmlPath, {encoding:'utf8', flag:'r'});
+								playersProgress[escapeHtml(pseudo)] = [index, Date.now()]
 								res.end(JSON.stringify({ err: 'ok', msg: clueHtml, key: key}));
 							} catch (err) {
 								if (err) console.error('Clue html not found ('+cluehtmlPath+')');
@@ -112,6 +126,23 @@ function sendFileIfFileExist(path, res){
 	if(fs.existsSync(path)) {
 		fs.createReadStream(path).pipe(res);
 	}
+}
+
+var entityMap = {
+  '&': '&amp;',
+  '<': '&lt;',
+  '>': '&gt;',
+  '"': '&quot;',
+  "'": '&#39;',
+  '/': '&#x2F;',
+  '`': '&#x60;',
+  '=': '&#x3D;'
+};
+
+function escapeHtml (string) {
+  return String(string).replace(/[&<>"'`=\/]/g, function (s) {
+    return entityMap[s];
+  });
 }
 
 app.listen(8000, (err) => {
