@@ -1,67 +1,80 @@
 [
 	{
-		"acceptableAnswers": "A32LD7REEPT",
+		"acceptableAnswers": "0CTOSMJF6PH",
 		"key": "A32LD7REEPT",
-		"previousKey": "A32LD7REEPT"
+		"previousKey": "0CTOSMJF6PH",
+		"cleanAnswer": ""
 	},
 	{
 		"acceptableAnswers": "^4$|^QUATRES?$",
 		"key": "BC0FIKUVQPG",
-		"previousKey": "A32LD7REEPT"
+		"previousKey": "A32LD7REEPT",
+		"cleanAnswer": "Quatre"
 	},
 	{
 		"acceptableAnswers": "AMOUR|LOVE",
 		"key": "CKM8ESX582V",
-		"previousKey": "BC0FIKUVQPG"
+		"previousKey": "BC0FIKUVQPG",
+		"cleanAnswer": "Beaucoup d'amour"
 	},
 	{
-		"acceptableAnswers": "PIZZA(AU)?BOUDIN|INDIGESTION",
+		"acceptableAnswers": "PIZZA(AU)?BOUDIN",
 		"key": "DO9V1Z840LD",
-		"previousKey": "CKM8ESX582V"
+		"previousKey": "CKM8ESX582V",
+		"cleanAnswer": "Indigestion de pizza au boudin"
 	},
 	{
 		"acceptableAnswers": "PUREE?(DE)?CAWOTT?ES?",
 		"key": "EZIBNQ8N4TY",
-		"previousKey": "DO9V1Z840LD"
+		"previousKey": "DO9V1Z840LD",
+		"cleanAnswer": "Purée de cawotte"
 	},
 	{
 		"acceptableAnswers": "BWAK(DE)?(TERRE)?",
 		"key": "FNQV18EQP7R",
-		"previousKey": "EZIBNQ8N4TY"
+		"previousKey": "EZIBNQ8N4TY",
+		"cleanAnswer": "Bwak terre"
 	},
 	{
 		"acceptableAnswers": "LEPATRON",
 		"key": "GQEM532GIWI",
-		"previousKey": "FNQV18EQP7R"
+		"previousKey": "FNQV18EQP7R",
+		"cleanAnswer": "Le-Patron"
 	},
 	{
 		"acceptableAnswers": "BRIGANDS?",
 		"key": "HVGW0F65W6T",
-		"previousKey": "GQEM532GIWI"
+		"previousKey": "GQEM532GIWI",
+		"cleanAnswer": "Brigand"
 	},
 	{
 		"acceptableAnswers": "TRANSPORTEURBRIGANDIN",
 		"key": "IALHXI1MWK4",
-		"previousKey": "HVGW0F65W6T"
+		"previousKey": "HVGW0F65W6T",
+		"cleanAnswer": "Transporteur brigandin"
 	},
 	{
 		"acceptableAnswers": "MADRESTAM",
 		"key": "JTZ53ME7ODA",
-		"previousKey": "IALHXI1MWK4"
+		"previousKey": "IALHXI1MWK4",
+		"cleanAnswer": "Madrestam"
 	},
 	{
 		"acceptableAnswers": "RIEN(DU)?(TOUT)?",
 		"key": "KLOV51CC84J",
-		"previousKey": "JTZ53ME7ODA"
+		"previousKey": "JTZ53ME7ODA",
+		"cleanAnswer": "Rien du tout"
 	},
 	{
 		"acceptableAnswers": "MAX",
 		"key": "LRBTRQIUY11",
-		"previousKey": "KLOV51CC84J"
+		"previousKey": "KLOV51CC84J",
+		"cleanAnswer": "Max"
 	},
 	{
 		"acceptableAnswers": "SIM|SOFT",
 		"key": "MMRL6JV1NM6",
-		"previousKey": "LRBTRQIUY11"
+		"previousKey": "LRBTRQIUY11",
+		"cleanAnswer": "Sim-Le-Soft"
 	}
 ]

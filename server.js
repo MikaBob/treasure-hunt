@@ -63,7 +63,6 @@ app.post('/getNextStep', (req, res) => {
 		.replace(/\W/ig, '')
 		.toUpperCase();
 
-
 	res.setHeader('Content-Type', 'application/json');
 
 	if(sanitizedAnswer !== '') {
@@ -77,10 +76,10 @@ app.post('/getNextStep', (req, res) => {
 			clues.forEach((clue) => {
 				if(alreadyFoundClue) return;
 
-				const { acceptableAnswers, key, previousKey } = clue;
+				const { acceptableAnswers, key, previousKey, cleanAnswer } = clue;
 
 				// if the clue follow the chronology
-				if(currentKey === previousKey) {
+				if(currentKey === previousKey && acceptableAnswers !== '') {
 
 					// if the anwser matches at least one acceptable answer
 					if(sanitizedAnswer.search(acceptableAnswers) > -1){
@@ -89,7 +88,7 @@ app.post('/getNextStep', (req, res) => {
 							const cluehtmlPath = CLUES_HTML + '/'+ key +'.html';
 							try {
 								const clueHtml = fs.readFileSync(cluehtmlPath, {encoding:'utf8', flag:'r'});
-								res.end(JSON.stringify({ err: 'ok', msg: clueHtml, key: key}));
+								res.end(JSON.stringify({ err: 'ok', msg: clueHtml, key: key, cleanAnswer: cleanAnswer}));
 							} catch (err) {
 								if (err) console.error('Clue html not found ('+cluehtmlPath+')');
 							}
@@ -101,7 +100,7 @@ app.post('/getNextStep', (req, res) => {
 			});
 
 			if(!isCurrentKeyFound) {
-				res.end(JSON.stringify({ err: 'reset', msg: '<p class="text-danger">Cette étape n\'est pas dans notre base de données. Vous devez tout reprendre depuis le début...</p>', key: 'A32LD7REEPT'}));
+				res.end(JSON.stringify({ err: 'reset', msg: '<p class="text-danger">Cette étape n\'est pas dans notre base de données. Vous devez tout reprendre depuis le début...</p>', key: '0CTOSMJF6PH'}));
 			} else {
 				res.end(JSON.stringify({ err: 'wrong', msg: 'Non ce n\'est pas ça :/', key: currentKey}));
 			}
