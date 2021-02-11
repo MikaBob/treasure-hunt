@@ -6,7 +6,8 @@ const CLUES_HTML = './views/clues_html';
 
 const bodyParser = require('body-parser');
 const express = require('express');
-const fs	= require('fs');
+const fs = require('fs');
+const url = require('url') ;
 
 let app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -20,6 +21,7 @@ app.get('*', (req, res, next) => {
 	next();
 });
 */
+
 
 app.get('/', (req, res) => {
 	let rightNow = new Date();
@@ -36,12 +38,12 @@ app.get('/', (req, res) => {
 });
 
 app.get(PUBLIC_HTML+'*', (req, res, next) => {
-	let path = '.'+PUBLIC_HTML+req.url.replace(PUBLIC_HTML, '');
+	let path = '.'+PUBLIC_HTML+url.parse(req.url).pathname.replace(PUBLIC_HTML, '');
 	sendFileIfFileExist(path, res);
 });
 
 app.get(NODE_MODULES+'*', (req, res, next) => {
-	let path = '.'+NODE_MODULES+req.url.replace(NODE_MODULES, '');
+	let path = '.'+NODE_MODULES+url.parse(req.url).pathname.replace(NODE_MODULES, '');
 	sendFileIfFileExist(path, res);
 });
 
@@ -113,6 +115,8 @@ app.post('/getNextStep', (req, res) => {
 function sendFileIfFileExist(path, res){
 	if(fs.existsSync(path)) {
 		fs.createReadStream(path).pipe(res);
+	} else {
+		res.status(404).send("File not found.");
 	}
 }
 

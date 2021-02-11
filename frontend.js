@@ -1,5 +1,7 @@
 const FADE_TIME = 600;
 
+$('#start').on('click', start); 
+
 function start() {
 	$('#start').hide({duration: 400, done: (()=>{
 		$('#start').parent().remove();
@@ -45,13 +47,13 @@ function handleAnswer(error, htmlToPrint, newKey, cleanAnswer) {
 	if(error === 'ok'){
 		// show the perfect answer
 		if(cleanAnswer !== '') {
-			hideAppendAndFadeInHtmlTo('<div class="text-primary center">'+cleanAnswer+'</div><hr class="separator mb-2"/>', '.indices');
+			hideAppendAndFadeInHtmlTo('<div class="text-primary center">'+cleanAnswer+'</div><hr class="separator my-4"/>', '.indices');
 		}
 		// show the next clue
 		hideAppendAndFadeInHtmlTo('<div class="row indice p-2">'+htmlToPrint+'</div>', '.indices');
 		window.scrollBy(0, 300);
 	} else if(error === 'reset'){
-		$('.indices').append('<hr class="separator"/><div class="row indice p-2 mb-3">'+htmlToPrint+'</div>');
+		$('.indices').append('<hr class="separator my-4"/><div class="row indice p-2 mb-3">'+htmlToPrint+'</div>');
 		nextStep('0CTOSMJF6PH');
 	} else {
 		$('.wrongAnswer').html(htmlToPrint);

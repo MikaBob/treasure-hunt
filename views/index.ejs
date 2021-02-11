@@ -17,12 +17,13 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Chasse au trésor Peaky-Blinders</title>
 		
-		<link href="public_html/stillshit.css" rel="stylesheet"/>
-		
+		<link href="public_html/override.min.css" rel="stylesheet"/>
+		<link href="public_html/stillshit.min.css" rel="stylesheet"/>
+
 		<script src="node_modules/jquery/dist/jquery.min.js"></script>
-		<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
 	</head>
-	
+
 	<body>
 		<div class="content container-lg px-3 px-lg-0">
 			<div class="row">
@@ -59,7 +60,7 @@
 			<div class="row">
 				<div class="col-12 indices">
 					<div class="row">
-						<button id="start" type="button" onclick="start()" class="btn btn-primary btn-lg w-100">C'est parti !</button>
+						<button id="start" type="button" class="btn btn-primary btn-lg w-100">C'est parti !</button>
 					</div>
 				</div>
 			</div>
@@ -77,13 +78,13 @@
 					</form>
 					<div class="row">
 						<div class="col-12 wrongAnswer-container alert alert-danger"  style="display: none;" role="alert">
-							<span class="alert-close close" aria-label="Close"><span aria-hidden="true">&times;</span></span>
+							<span class="alert-close close float-end" aria-label="Close"><span aria-hidden="true">&times;</span></span>
 							<div class="wrongAnswer"></div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		<script src="public_html/frontend.js"></script>
+		<script src="public_html/frontend.min.js"></script>
 	</body>
 </html>
