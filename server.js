@@ -1,4 +1,4 @@
-const RELEASE_DATE_STRING = '2021-02-09T13:48:40Z';
+const RELEASE_DATE_STRING = '2021-02-16T19:59:55Z';
 const PUBLIC_HTML = '/public_html/';
 const NODE_MODULES = '/node_modules/';
 const CLUES_DATABASE = './clues.json';
