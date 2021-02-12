@@ -1,4 +1,6 @@
-const RELEASE_DATE_STRING = '2021-02-09T13:48:40Z';
+const RELEASE_DATE_STRING = '2020-02-16T19:59:55Z';
+const BACKEND_PASSWORD = 'douze';
+
 const PUBLIC_HTML = '/public_html/';
 const NODE_MODULES = '/node_modules/';
 const CLUES_DATABASE = './clues.json';
@@ -6,7 +8,8 @@ const CLUES_HTML = './views/clues_html';
 
 const bodyParser = require('body-parser');
 const express = require('express');
-const fs	= require('fs');
+const fs = require('fs');
+const url = require('url') ;
 
 let app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -25,6 +28,7 @@ app.get('*', (req, res, next) => {
 });
 */
 
+
 app.get('/', (req, res) => {
 	let rightNow = new Date();
 	let releaseDateTime = new Date(RELEASE_DATE_STRING);
@@ -40,12 +44,12 @@ app.get('/', (req, res) => {
 });
 
 app.get(PUBLIC_HTML+'*', (req, res, next) => {
-	let path = '.'+PUBLIC_HTML+req.url.replace(PUBLIC_HTML, '');
+	let path = '.'+PUBLIC_HTML+url.parse(req.url).pathname.replace(PUBLIC_HTML, '');
 	sendFileIfFileExist(path, res);
 });
 
 app.get(NODE_MODULES+'*', (req, res, next) => {
-	let path = '.'+NODE_MODULES+req.url.replace(NODE_MODULES, '');
+	let path = '.'+NODE_MODULES+url.parse(req.url).pathname.replace(NODE_MODULES, '');
 	sendFileIfFileExist(path, res);
 });
 
@@ -76,7 +80,6 @@ app.post('/getNextStep', (req, res) => {
 		.replace(/\W/ig, '')
 		.toUpperCase();
 
-
 	res.setHeader('Content-Type', 'application/json');
 
 	if(sanitizedAnswer !== '') {
@@ -90,10 +93,10 @@ app.post('/getNextStep', (req, res) => {
 			clues.forEach((clue) => {
 				if(alreadyFoundClue) return;
 
-				const { index, acceptableAnswers, key, previousKey } = clue;
+				const { index, acceptableAnswers, key, previousKey, cleanAnswer } = clue;
 
 				// if the clue follow the chronology
-				if(currentKey === previousKey) {
+				if(currentKey === previousKey && acceptableAnswers !== '') {
 
 					// if the anwser matches at least one acceptable answer
 					if(sanitizedAnswer.search(acceptableAnswers) > -1){
@@ -103,7 +106,7 @@ app.post('/getNextStep', (req, res) => {
 							try {
 								const clueHtml = fs.readFileSync(cluehtmlPath, {encoding:'utf8', flag:'r'});
 								playersProgress[escapeHtml(pseudo)] = [index, Date.now()]
-								res.end(JSON.stringify({ err: 'ok', msg: clueHtml, key: key}));
+								res.end(JSON.stringify({ err: 'ok', msg: clueHtml, key: key, cleanAnswer: cleanAnswer}));
 							} catch (err) {
 								if (err) console.error('Clue html not found ('+cluehtmlPath+')');
 							}
@@ -115,7 +118,7 @@ app.post('/getNextStep', (req, res) => {
 			});
 
 			if(!isCurrentKeyFound) {
-				res.end(JSON.stringify({ err: 'reset', msg: '<p class="text-danger">Cette étape n\'est pas dans notre base de données. Vous devez tout reprendre depuis le début...</p>', key: 'A32LD7REEPT'}));
+				res.end(JSON.stringify({ err: 'reset', msg: '<p class="text-danger">Cette étape n\'est pas dans notre base de données. Vous devez tout reprendre depuis le début...</p>', key: '0CTOSMJF6PH'}));
 			} else {
 				res.end(JSON.stringify({ err: 'wrong', msg: 'Non ce n\'est pas ça :/', key: currentKey}));
 			}
@@ -125,9 +128,22 @@ app.post('/getNextStep', (req, res) => {
 	}
 });
 
+
+app.get('/backend', (req, res) => {
+	const { password } = req.query;
+
+	if( password === BACKEND_PASSWORD) {
+		res.render('backend');
+	} else {
+		res.render('backend_login');
+	}
+});
+
 function sendFileIfFileExist(path, res){
 	if(fs.existsSync(path)) {
 		fs.createReadStream(path).pipe(res);
+	} else {
+		res.status(404).send("File not found.");
 	}
 }
 

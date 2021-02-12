@@ -1,6 +1,7 @@
 const FADE_TIME = 600;
 
 pseudo = "";
+$('#start').on('click', start); 
 
 function start() {
 	$('#start').hide({duration: 400, done: (()=>{
@@ -16,14 +17,10 @@ function start() {
 		$('#answer').removeAttr('disabled');
 		$('#button-answer').removeAttr('disabled');
 		stopLoading();
-		nextStep('A32LD7REEPT');
+		nextStep('0CTOSMJF6PH');
 		$('.answerField').hide().fadeIn(FADE_TIME*2, () => {$('#answer').focus();});
 	})});
 };
-
-function handleProgressAnswer (error, message) {
-	
-}
 
 function refreshProgress () {
 	$.ajax({
@@ -35,7 +32,6 @@ function refreshProgress () {
 		$('#progressView').html(response)
 	});
 }
-
 
 function nextStep(answer) {
 	
@@ -58,26 +54,26 @@ function nextStep(answer) {
 		}
 	})
 	.done((response) => {
-		handleAnswer(response.err, response.msg, response.key, answer);
+		handleAnswer(response.err, response.msg, response.key, response.cleanAnswer);
 	})
 	.always(() => {
 		stopLoading();
 	});	
 }
 
-function handleAnswer(error, htmlToPrint, newKey, answer) {
+function handleAnswer(error, htmlToPrint, newKey, cleanAnswer) {
 	$('#progression').val(newKey);
 	if(error === 'ok'){
-		// show the answer written by the user
-		if(answer !== newKey) {
-			hideAppendAndFadeInHtmlTo('<div class="text-primary center">'+answer+'</div><hr class="separator mb-2"/>', '.indices');
+		// show the perfect answer
+		if(cleanAnswer !== '') {
+			hideAppendAndFadeInHtmlTo('<div class="text-primary center">'+cleanAnswer+'</div><hr class="separator my-4"/>', '.indices');
 		}
 		// show the next clue
 		hideAppendAndFadeInHtmlTo('<div class="row indice p-2">'+htmlToPrint+'</div>', '.indices');
 		window.scrollBy(0, 300);
 	} else if(error === 'reset'){
-		$('.indices').append('<hr class="separator"/><div class="row indice p-2 mb-3">'+htmlToPrint+'</div>');
-		nextStep('A32LD7REEPT');
+		$('.indices').append('<hr class="separator my-4"/><div class="row indice p-2 mb-3">'+htmlToPrint+'</div>');
+		nextStep('0CTOSMJF6PH');
 	} else {
 		$('.wrongAnswer').html(htmlToPrint);
 		$('.wrongAnswer-container').fadeIn(FADE_TIME/2);

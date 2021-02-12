@@ -1,14 +1,6 @@
 @use 'sass:color';
 
-// override theme
-$primary: #cced03; // green
-$secondary: #292C24; // dark gray
-$warning: #E6893D; // orange
-$info: #3AF2FF; // blue
-$text-color: #D3D3D3; // light gray
-
-
-@import "./node_modules/bootstrap/scss/bootstrap";
+@import "themes";
 
 // html tags
 body {
@@ -29,12 +21,6 @@ img {
 ul {
 	width: 100%;
 	list-style: none;
-
-	li img {
-		max-width: calc(1% + 1vw + 1vh) !important;
-		max-height: 35px;
-		margin-right: 0.5rem;
-	}
 }
 
 //class
@@ -47,6 +33,12 @@ ul {
 	padding: 1em;
 	font-weight: 700;
 	font-size: calc(1% + 1vw + 1vh);
+}
+
+.img-icon {
+	max-width: calc(1% + 1vw + 1vh) !important;
+	max-height: 35px;
+	margin-right: 0.5rem;
 }
 
 .img-flip {
@@ -63,10 +55,10 @@ ul {
 	max-width: 50%;
 	background-color: color.scale($info, $lightness: -30%);
 	clear: both;
+	margin: auto;
 }
 
 .speech {
-	position: absolute;
 	bottom: 0;
 	background-image: url('img/background_speech.png');
 }
@@ -79,7 +71,6 @@ ul {
 	animation-name: spinning;
 	animation-duration: 4s;
 	animation-iteration-count: infinite;
-	/* linear | ease | ease-in | ease-out | ease-in-out */
 	animation-timing-function: linear;
 }
 
