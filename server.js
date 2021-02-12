@@ -1,4 +1,6 @@
-const RELEASE_DATE_STRING = '2021-02-16T19:59:55Z';
+const RELEASE_DATE_STRING = '2020-02-16T19:59:55Z';
+const BACKEND_PASSWORD = 'douze';
+
 const PUBLIC_HTML = '/public_html/';
 const NODE_MODULES = '/node_modules/';
 const CLUES_DATABASE = './clues.json';
@@ -109,6 +111,17 @@ app.post('/getNextStep', (req, res) => {
 		});
 	} else {
 		res.end(JSON.stringify({ err: 'wrong', msg: 'Non ce n\'est pas ça :/', key: currentKey}));
+	}
+});
+
+
+app.get('/backend', (req, res) => {
+	const { password } = req.query;
+
+	if( password === BACKEND_PASSWORD) {
+		res.render('backend');
+	} else {
+		res.render('backend_login');
 	}
 });
 

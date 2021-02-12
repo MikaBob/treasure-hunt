@@ -13,7 +13,6 @@ function start() {
 	})});
 };
 
-
 function nextStep(answer) {
 	
 	if(typeof answer === 'undefined' || answer === '') {
