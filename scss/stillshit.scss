@@ -21,12 +21,6 @@ img {
 ul {
 	width: 100%;
 	list-style: none;
-
-	li img {
-		max-width: calc(1% + 1vw + 1vh) !important;
-		max-height: 35px;
-		margin-right: 0.5rem;
-	}
 }
 
 //class
@@ -39,6 +33,12 @@ ul {
 	padding: 1em;
 	font-weight: 700;
 	font-size: calc(1% + 1vw + 1vh);
+}
+
+.img-icon {
+	max-width: calc(1% + 1vw + 1vh) !important;
+	max-height: 35px;
+	margin-right: 0.5rem;
 }
 
 .img-flip {
