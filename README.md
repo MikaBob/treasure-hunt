@@ -19,24 +19,26 @@
 # In-game requirements
 
 ### Players
-Le-Patron in Brâkmar's prison
-Rien-du-Tout hidden in the pirate ship/treasure map
-Items in marchand mode of Le-Fossoyeur (Limonade d'incarnam, Plume chimérique, Examinateur)
-Character at Sim-le-Soft's house to give rewards
+
+- Le-Patron in - Brâkmar's prison
+- Rien-du-Tout hidden in the pirate ship/treasure map
+- Items in marchand mode of Le-Fossoyeur (Limonade d'incarnam, Plume chimérique, Examinateur)
+- Character at Sim-le-Soft's house to give rewards
+
 
 ### Rabbits
 
-- White	-26,-16
-- Blue	-26,-13
-- Yeahlow	-28,-13
-- Black	-28,-12
-- Green	-25,-12
-- Orange	-25,-14
+- White     -26,-16     pointing South
+- Blue      -26,-13     pointing West
+- Yeahlow	-28,-13     pointing South
+- Black     -28,-12     pointing East
+- Green     -25,-12     pointing North
+- Orange    -25,-14     pointing Sim
 
 
 Don't forget to 
 
-- /solo
+-   /solo
 - 	put on the rabbit's earpuff
 - 	point out directions
 - 	and do not be too close to the map border (game interface could cover the Rabbits)
