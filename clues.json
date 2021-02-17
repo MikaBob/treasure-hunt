@@ -12,19 +12,19 @@
 		"cleanAnswer": "Quatre"
 	},
 	{
-		"acceptableAnswers": "AMOUR|LOVE",
+		"acceptableAnswers": "AMOURS?|LOVE",
 		"key": "CKM8ESX582V",
 		"previousKey": "BC0FIKUVQPG",
 		"cleanAnswer": "Beaucoup d'amour"
 	},
 	{
-		"acceptableAnswers": "PIZZA(AU)?BOUDIN",
+		"acceptableAnswers": "PIZZAS?(AUX?)?BOUDINS?",
 		"key": "DO9V1Z840LD",
 		"previousKey": "CKM8ESX582V",
 		"cleanAnswer": "Indigestion de pizza au boudin"
 	},
 	{
-		"acceptableAnswers": "PUREE?(DE)?CAWOTT?ES?",
+		"acceptableAnswers": "PUREE?S?(DE)?CAWOTT?ES?",
 		"key": "EZIBNQ8N4TY",
 		"previousKey": "DO9V1Z840LD",
 		"cleanAnswer": "Purée de cawotte"
@@ -48,7 +48,7 @@
 		"cleanAnswer": "Brigand"
 	},
 	{
-		"acceptableAnswers": "TRANSPORTEURBRIGANDIN",
+		"acceptableAnswers": "TRANSPORTEURS?BRIGANDINS?",
 		"key": "IALHXI1MWK4",
 		"previousKey": "HVGW0F65W6T",
 		"cleanAnswer": "Transporteur brigandin"
@@ -60,7 +60,7 @@
 		"cleanAnswer": "Madrestam"
 	},
 	{
-		"acceptableAnswers": "RIEN(DU)?(TOUT)?",
+		"acceptableAnswers": "RIEN",
 		"key": "KLOV51CC84J",
 		"previousKey": "JTZ53ME7ODA",
 		"cleanAnswer": "Rien du tout"
